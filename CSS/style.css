@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+  background-color: #dbdfe2;
+}
+
+header {
+  background-color: #a87dd1b7;
+  height: 5rem;
+  border-bottom: 0.5rem solid #333;
+}
+
+header #nav-bar {
+  display: flex;
+  padding: 0 2rem;
+  /* Limitar a largura */
+  max-width: 105rem;
+  /* Margens cima e baixo 0 e margens laterais auto para centralizar */
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+}
+
+header #nav-bar .nav-brand {
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #333;
+}
+
+header #nav-bar .nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+header #nav-bar .nav-list .nav-item a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+header #nav-bar .nav-list .nav-item a:hover {
+  color: #666;
+  transition: 0.3s;
+}
+
+/* Só dá pra fazer esse hamburger menu 'abrível' com JS */
+header #nav-bar .hamburger-menu {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  header #nav-bar .hamburger-menu {
+    display: block;
+  }
+
+  header #nav-bar .nav-list {
+    display: none;
+  }
+}
+/* Section Banner */
+
+main {
+  margin-top: 6rem;
+}
+
+main #banner {
+  display: flex;
+  justify-content: space-between;
+  max-width: 80rem;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+main #banner .banner-content .banner-content-title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 4rem;
+  margin-bottom: 2.5rem;
+}
+
+main #banner .banner-content .banner-content-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  max-width: 30rem;
+  margin-bottom: 2.5rem;
+}
+
+main #banner .banner-content .banner-content-button {
+  background-color: #6a0cd6;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+main #banner .banner-content .banner-content-button:hover {
+  background-color: #9c55df;
+  transition: 0.3s;
+}
+
+main #banner .banner-image {
+  border-radius: 50%;
+  border: 0.5rem solid #333;
+}
+/* ? Abaixo de 1200 pixels, esse estilo será aplicado */
+@media (max-width: 1200px) {
+  main #banner {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  main #banner .banner-content {
+    text-align: center;
+  }
+
+  main #banner .banner-content .banner-content-button {
+    text-align: center;
+  }
+}
+
+/* Section Posts */
+
+section#posts {
+  margin-top: 4rem;
+  background-color: #c181fc44;
+  padding: 2rem;
+}
+
+#posts .posts-content {
+  max-width: 100rem;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+#posts .posts-content .posts-content-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+#posts .posts-content .posts-content-header .view-all-link {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6a0cd6;
+}
+
+#posts .posts-content .posts-content-header .view-all-link:hover {
+  color: #9760d4;
+  transition: 0.3s;
+}
+
+#posts .posts-content .posts-content-header .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#posts .posts-content .post-cards {
+  display: flex;
+  gap: 10rem;
+  justify-content: space-between;
+  max-width: 70rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  max-height: 30rem;
+}
+
+#posts .posts-content .post-card {
+  padding: 2rem;
+  background-color: #dbdfe2;
+  border-radius: 1rem;
+}
+
+#posts .posts-content .post-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+#posts .posts-content .post-card span {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  #posts .posts-content .post-cards {
+    flex-direction: column;
+  }
+}
