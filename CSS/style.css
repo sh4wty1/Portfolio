@@ -72,8 +72,25 @@ header #nav-bar .hamburger-menu {
 
   header #nav-bar .nav-list {
     display: none;
+    /* Esconde o menu de navegação */
+    flex-direction: column;
+    /* Coloca os itens em coluna */
+    gap: 1rem;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    background-color: #a87dd1b7;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  header #nav-bar .nav-list.show {
+    display: flex;
+    /* Exibe o menu quando a classe 'show' estiver ativa */
   }
 }
+
+
 /* Section Banner */
 
 main {
@@ -87,6 +104,28 @@ main #banner {
   padding: 0 2rem;
   margin: 0 auto;
 }
+
+main #banner .banner-image {
+  border-radius: 50%;
+  border: 0.5rem solid #333;
+  width: 30rem;
+  /* Ajusta o tamanho da imagem */
+  height: 30rem;
+  /* Ajusta o tamanho da imagem */
+  object-fit: cover;
+  /* Garante que a imagem se encaixe bem no contêiner */
+}
+
+@media (max-width: 600px) {
+  main #banner .banner-image {
+    width: 16rem;
+    /* Tamanho ajustado para o celular */
+    height: 16rem;
+    /* Tamanho ajustado para o celular */
+  }
+}
+
+
 
 main #banner .banner-content .banner-content-title {
   font-size: 3rem;
@@ -122,6 +161,7 @@ main #banner .banner-image {
   border-radius: 50%;
   border: 0.5rem solid #333;
 }
+
 /* ? Abaixo de 1200 pixels, esse estilo será aplicado */
 @media (max-width: 1200px) {
   main #banner {
@@ -180,19 +220,25 @@ section#posts {
 
 #posts .posts-content .post-cards {
   display: flex;
-  gap: 10rem;
-  justify-content: space-between;
-  max-width: 70rem;
+  gap: 2rem;
+  /* Reduzi para 2rem para espaçamento mais agradável */
+  justify-content: center;
+  /* Isso vai centralizar os itens */
+  flex-wrap: wrap;
+  /* Isso vai permitir que os cartões se reorganizem quando necessário */
   margin-bottom: 2rem;
-  align-items: center;
-  max-height: 30rem;
 }
+
 
 #posts .posts-content .post-card {
   padding: 2rem;
   background-color: #dbdfe2;
   border-radius: 1rem;
+  width: 100%;
+  max-width: 350px;
+  /* Limita a largura para um tamanho razoável */
 }
+
 
 #posts .posts-content .post-card h3 {
   font-size: 2rem;
@@ -211,4 +257,27 @@ section#posts {
   #posts .posts-content .post-cards {
     flex-direction: column;
   }
+
+  #posts .posts-content .nav-list {
+    transition: all 0.8s ease;
+    /* Adiciona uma transição suave */
+  }
+
+  #posts .posts-content .post-card h3 a {
+    text-decoration: none;
+    /* Remove o sublinhado do link */
+    color: #333;
+    /* Cor do link igual ao título */
+    font-weight: 700;
+    /* Mantém o peso da fonte igual ao título */
+  }
+
+  #posts .posts-content .post-card h3 a:hover {
+    color: #6a0cd6;
+    /* Cor de destaque no hover */
+    transition: color 0.3s;
+    /* Transição suave na cor */
+  }
+
+
 }
